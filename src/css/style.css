@@ -1,0 +1,222 @@
+@import url(../css/variable.css);
+
+/* Variables de color */
+:root {
+    --color-dark-blue: #001f3f;  /* Azul oscuro */
+    --color-silver: #C0C0C0;      /* Plateado */
+    --color-bright-blue: #76d4df; /* Azul brillante */
+    --color-almost-black: #0b0b13; /* Casi negro */
+    --color-white: #FFFFFF;        /* Blanco */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--color-almost-black); 
+    user-select: none;
+    overflow: hidden; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    height: 100%; 
+}
+
+.button {
+    margin: 0;
+    position: relative;
+    border: none;
+    background: transparent;
+    --stroke-color: var(--color-silver); 
+    --ani-color: rgba(95, 3, 244, 0);
+    --color-gar: linear-gradient(90deg, var(--color-silver), var(--color-bright-blue), var(--color-bright-blue), var(--color-bright-blue));
+    letter-spacing: 4px;
+    font-size: 6vw; 
+    font-family: "roboto"; 
+    text-transform: uppercase;
+    color: transparent;
+    cursor: pointer;
+    z-index: 1;
+    bottom: 5rem;
+}
+
+.front-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    background: var(--color-gar);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200%;
+    overflow: hidden;
+    transition: all 1s;
+    animation: ani 10s infinite;
+    border-bottom: 2px solid transparent;
+}
+
+@keyframes ani {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 400%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+.parrafo {
+    font-family: "roboto";
+    color: var(--color-silver); 
+    font-size: 5vw; 
+    letter-spacing: 5px; 
+}
+
+.cti {
+    background-color: rgba(26, 26, 26, 0.8); /* Fondo oscuro con transparencia */
+    border: 3px solid transparent;
+    border-radius: 0.6em;
+    transition: 0.2s;
+    background-color: transparent;
+    border: 3px solid var(--color-silver); /* Borde plateado */
+    box-shadow: 0px 0px 27px 5px var(--color-bright-blue); /* Sombra azul brillante */
+}
+
+.CTI {
+    color: var(--color-white); /* Texto blanco */
+    font-family: 'roboto';
+    font-size: 4vw;
+    font-weight: bold;
+    overflow: hidden;
+    border-right: 4px solid transparent;
+    white-space: nowrap;
+    margin: 0 auto;
+    border-right: 4px solid var(--color-bright-blue); /* Borde azul brillante */
+    animation: letters 2s steps(20, end), cursor .4s step-end infinite; 
+}
+
+@keyframes letters {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursor {
+    from {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--color-bright-blue); /* Cursor azul brillante */
+    }
+}
+
+@media (max-width: 600px) {
+    .button {
+        font-size: 8vw; 
+    }
+
+    .parrafo {
+        font-size: 7vw;
+    }
+
+    .CTI {
+        font-size: 6vw;
+    }
+
+    .cti {
+        width: 90vw; 
+    }
+}
+
+.botonhref {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    position: relative;
+}
+/* boton de scroll*/ 
+
+
+.contenedorscroll{
+    display: flex;
+    flex-direction: column;
+}
+@keyframes drop {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(80px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.lava-lamp {
+    position: relative;
+    width: 50px;
+    margin-top: 5vw;
+    height: 100px;
+    background: #000;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to bottom, #e64980, #ff8787);
+    border-radius: 50%;
+    left: 15px;
+    animation: drop 5s ease-in-out infinite;
+  }
+  .bubble1 {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to bottom, #82c91e, #3bc9db);
+    border-radius: 50%;
+    left: 1px;
+    animation: drop 3s ease-in-out infinite;
+  }
+  .bubble2 {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to bottom, #7950f2, #f783ac);
+    border-radius: 50%;
+    left: 30px;
+    animation: drop 4s ease-in-out infinite;
+  }
+  .bubble3 {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to bottom, #4481eb, #04befe);
+    border-radius: 50%;
+    left: 20px;
+    animation: drop 6s ease-in-out infinite;
+  }
+  

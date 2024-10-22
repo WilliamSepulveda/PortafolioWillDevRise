@@ -1,0 +1,13 @@
+:root{
+    :root {
+        --color-dark-blue: #001f3f;  /* Azul oscuro */
+        --color-silver: #C0C0C0;      /* Plateado */
+        --color-bright-blue: #007BFF; /* Azul brillante */
+        --color-almost-black: #0C0C0C; /* Casi negro */
+        --color-white: #FFFFFF;        /* Blanco */
+    }
+}
+@font-face {
+    font-family: 'roboto';
+    src: url(../storage/fonts/MartianMono-VariableFont_wdth\,wght.ttf);
+}
