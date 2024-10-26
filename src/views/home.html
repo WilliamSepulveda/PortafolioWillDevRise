@@ -6,6 +6,7 @@
     <title>WillDevRise</title>
     <link rel="stylesheet" href="../css/home.css">
     <script type="module" defer src="../js/home.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
 </head>
 <body>
     <div class="header">
@@ -49,19 +50,60 @@
           <h2>WillDevRise</h2>
         </div>
       </div>
-      <p class="heroP">The world's best platform, <br>
-        powered by EclipxOS + React.</p>
+      <p class="heroP">Junior fullstack developer<br>
+        Transformo ideas en experiencias digitales, construyendo cada línea de código para conectar el futuro con el presente..</p>
       <div class="mountains">
         <div></div>
         <div></div>
         <div></div>
       </div>
+      <!-- este es la parte de la mision y la vision  -->
       <div class="hero-spacer"></div>
-      
-      <div class="content-section">
-        <div class="content-acc">
-          <div></div>
-          <div></div>
+
+      <div class="content-section" id="Mision">
+        <div class="content-container">
+            <div class="image-section">
+                <img src="../storage/img/Mision.png" alt="Descripción de la imagen" />
+            </div>
+            <div class="text-section">
+                <h3 class="title">Mi Misión.</h3>
+                <span>Mi objetivo es transformar la infraestructura digital de pequeñas y medianas empresas
+                    a través de soluciones tecnológicas innovadoras y personalizadas.
+                    Me especializo en el desarrollo de aplicaciones web y sistemas de gestión
+                    que impulsan el crecimiento y la eficiencia.</span>
+            </div>
         </div>
+    </div>
+    
+    <div class="content-section" id="Vision" style="display: none;">
+        <div class="content-container">
+            <div class="image-section">
+                <img src="../storage/img/Vision.png" alt="Descripción de la imagen" />
+            </div>
+            <div class="text-section">
+                <h3 class="title">Mi Visión.</h3>
+                <span>Ser reconocido como un líder en el desarrollo fullstack, creando un impacto positivo en el mundo tecnológico...</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-section" id="Valores" style="display: none;">
+        <div class="content-container">
+            <div class="image-section">
+                <img src="../storage/img/Valores.png" alt="Descripción de la imagen" />
+            </div>
+            <div class="text-section">
+                <h3 class="title">Mis Valores.</h3>
+                <span>1. Trabajo en equipo <br> 2. Creatividad <br> 3. Innovación <br> 4. Compromiso <br> 5. Respeto <br> 6. Empatía <br> 7. Profesionalismo</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Botones para cambiar entre secciones -->
+    <div class="navegacion">
+      <button id="btnPrev" class="nav-button">⬅️</button>
+      <button id="btnNext" class="nav-button">➡️</button>
+  </div>
+    
 </body>
 </html>

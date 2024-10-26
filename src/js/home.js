@@ -82,3 +82,35 @@ window.addEventListener('resize', onResize);
 
 initParticles();
 animate();
+
+
+
+// parte de valores 
+const secciones = document.querySelectorAll('.content-section');
+let indiceActual = 0;
+
+// Mostrar la sección inicial
+secciones[indiceActual].style.display = 'block';
+secciones[indiceActual].classList.add('active');
+
+document.getElementById('btnPrev').addEventListener('click', () => {
+    cambiarSeccion(-1);
+});
+
+document.getElementById('btnNext').addEventListener('click', () => {
+    cambiarSeccion(1);
+});
+
+function cambiarSeccion(direccion) {
+    secciones[indiceActual].classList.remove('active'); // Quitar clase de activo
+    secciones[indiceActual].classList.add('exit'); // Aplicar clase de salida
+
+    setTimeout(() => {
+        secciones[indiceActual].style.display = 'none'; // Ocultar la sección actual
+        indiceActual = (indiceActual + direccion + secciones.length) % secciones.length; // Calcular el nuevo índice
+        secciones[indiceActual].style.display = 'block'; // Mostrar la nueva sección
+        secciones[indiceActual].classList.remove('exit'); // Quitar clase de salida
+        secciones[indiceActual].classList.add('active'); // Aplicar clase de activo
+    }, 600); // Tiempo de espera para la animación de salida
+}
+
