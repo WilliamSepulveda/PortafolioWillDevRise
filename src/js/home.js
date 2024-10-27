@@ -117,4 +117,4 @@ function cambiarSeccion(direccion) {
     }, 600); // Tiempo de espera para la animación de salida
 }
 
-
+// este es el modulo de certificados

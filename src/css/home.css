@@ -812,3 +812,45 @@ p {
 .contentSsectionObjetivos .content-acc div:hover {
     animation: spinGrow 2s ease-in-out forwards; /* Animación al pasar el mouse */
 }
+
+
+/* modulo de certficados*/
+.containerCertificado {
+    display: flex;
+    overflow: auto;
+    padding: 10px;
+    gap: 10px;
+    scroll-padding: 10px;
+    width: 80%;
+    height: 400px;
+    background-color: rgb(32, 32, 33);
+    border: 2px solid rgb(34, 5, 38);
+    margin: 20px auto; /* Centra el contenedor y añade un margen superior */
+}
+
+.containerCertificado .item {
+    scroll-snap-align: start;
+    flex: 0 0 60%;
+    background: linear-gradient(120deg, rgb(14, 30, 53) 30%, rgb(115, 115, 117) 88%, rgb(255, 185, 160) 40%, rgba(238, 234, 232, 0.484) 10%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: bisque;
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.3em;
+    font-weight: 400;
+    border-radius: .2rem;
+}
+
+.certificado1 {
+    color: white;
+    text-align: center; /* Centra el texto */
+    margin-top: 10px; /* Añade un margen superior para separación */
+    font-size: 1.5rem; /* Tamaño de fuente para el texto */
+}
+.item img{
+    width: 100%;
+    height: auto;
+}
