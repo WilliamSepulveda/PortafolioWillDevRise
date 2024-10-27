@@ -93,12 +93,15 @@ let indiceActual = 0;
 secciones[indiceActual].style.display = 'block';
 secciones[indiceActual].classList.add('active');
 
-document.getElementById('btnPrev').addEventListener('click', () => {
-    cambiarSeccion(-1);
-});
+// Asignar eventos a todos los botones de navegación
+secciones.forEach((seccion, index) => {
+    seccion.querySelector('.prev').addEventListener('click', () => {
+        cambiarSeccion(-1);
+    });
 
-document.getElementById('btnNext').addEventListener('click', () => {
-    cambiarSeccion(1);
+    seccion.querySelector('.next').addEventListener('click', () => {
+        cambiarSeccion(1);
+    });
 });
 
 function cambiarSeccion(direccion) {
@@ -113,4 +116,5 @@ function cambiarSeccion(direccion) {
         secciones[indiceActual].classList.add('active'); // Aplicar clase de activo
     }, 600); // Tiempo de espera para la animación de salida
 }
+
 
