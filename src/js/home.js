@@ -117,4 +117,46 @@ function cambiarSeccion(direccion) {
     }, 600); // Tiempo de espera para la animación de salida
 }
 
-// este es el modulo de certificados
+// mouse
+
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+});
+
+// scroll de certificados 
+const containerCertificado = document.querySelector('.containerCertificado');
+
+let reachedEndOfScroll = false;
+let scrollSpeed = 50; // Ajusta la velocidad de desplazamiento horizontal
+
+function handleScroll(event) {
+    if (!reachedEndOfScroll) {
+        event.preventDefault(); // Evita el scroll vertical
+
+        // Ajuste para un desplazamiento horizontal más rápido
+        containerCertificado.scrollLeft += event.deltaY * scrollSpeed / 20; 
+
+        // Verificar si hemos llegado al final o al inicio del scroll horizontal
+        const atEnd = containerCertificado.scrollLeft + containerCertificado.clientWidth >= containerCertificado.scrollWidth;
+        const atStart = containerCertificado.scrollLeft <= 0;
+        
+        // Permitir desplazamiento vertical cuando llegamos al final
+        if (atEnd || atStart) {
+            reachedEndOfScroll = true;
+        }
+    } else if (event.deltaY < 0 || event.deltaY > 0) {
+        // Restablecer el scroll horizontal cuando se vuelve a desplazar en el contenedor
+        reachedEndOfScroll = false;
+    }
+}
+
+// Añadir el control de desplazamiento horizontal a eventos `wheel` y `touchmove`
+containerCertificado.addEventListener('wheel', handleScroll);
+containerCertificado.addEventListener('touchmove', (event) => {
+    if (!reachedEndOfScroll) {
+        handleScroll(event);
+    }
+});
