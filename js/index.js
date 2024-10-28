@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     animateButton();
     setTimeout(() => {
-        window.location.href = "/src/views/home.html"; 
+        window.location.href = "/views/home.html"; 
     }, 5500); 
    
 });
