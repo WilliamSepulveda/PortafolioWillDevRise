@@ -130,28 +130,34 @@ document.addEventListener('mousemove', (e) => {
 const containerCertificado = document.querySelector('.containerCertificado');
 
 let reachedEndOfScroll = false;
-let scrollSpeed = 50; // Ajusta la velocidad de desplazamiento horizontal
+let scrollSpeed = 90; // Ajuste para velocidad de desplazamiento horizontal
 
 function handleScroll(event) {
+    // Evita el scroll vertical solo si aún no hemos alcanzado el final o inicio del scroll horizontal
     if (!reachedEndOfScroll) {
         event.preventDefault(); // Evita el scroll vertical
+        containerCertificado.scrollLeft += event.deltaY * scrollSpeed / 10;
 
-        // Ajuste para un desplazamiento horizontal más rápido
-        containerCertificado.scrollLeft += event.deltaY * scrollSpeed / 20; 
-
-        // Verificar si hemos llegado al final o al inicio del scroll horizontal
-        const atEnd = containerCertificado.scrollLeft + containerCertificado.clientWidth >= containerCertificado.scrollWidth;
+        // Verificar si estamos al final o al inicio del scroll horizontal
+        const atEnd = containerCertificado.scrollLeft + containerCertificado.clientWidth >= containerCertificado.scrollWidth -1;
         const atStart = containerCertificado.scrollLeft <= 0;
-        
-        // Permitir desplazamiento vertical cuando llegamos al final
+
+        // Activar el scroll vertical cuando llegamos al final o inicio
         if (atEnd || atStart) {
             reachedEndOfScroll = true;
         }
-    } else if (event.deltaY < 0 || event.deltaY > 0) {
+    } else {
         // Restablecer el scroll horizontal cuando se vuelve a desplazar en el contenedor
-        reachedEndOfScroll = false;
+        if (event.deltaY < 0 || event.deltaY > 0) {
+            reachedEndOfScroll = false;
+        }
     }
 }
+
+// Agregar el evento de escucha de scroll al contenedor
+containerCertificado.addEventListener('wheel', handleScroll);
+
+
 
 // Añadir el control de desplazamiento horizontal a eventos `wheel` y `touchmove`
 containerCertificado.addEventListener('wheel', handleScroll);
