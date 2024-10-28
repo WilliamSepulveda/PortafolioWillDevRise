@@ -160,3 +160,23 @@ containerCertificado.addEventListener('touchmove', (event) => {
         handleScroll(event);
     }
 });
+
+// animacion al bajar a objetivos
+document.addEventListener("DOMContentLoaded", () => {
+    const objetivosSection = document.querySelector('.contentSsectionObjetivos');
+
+    function handleScroll() {
+        const sectionPosition = objetivosSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1;
+
+        // Comprueba si la sección está visible en la pantalla
+        if (sectionPosition < screenPosition && sectionPosition > 0) {
+            objetivosSection.classList.add('active');
+        } else {
+            objetivosSection.classList.remove('active');
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+});
+
